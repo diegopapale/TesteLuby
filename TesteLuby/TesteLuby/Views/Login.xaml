@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="TesteLuby.Views.Login">
+
+    <NavigationPage.TitleView>
+        <Label Text="ÁREA RESTRITA" FontSize="Large" FontAttributes="Bold" />
+    </NavigationPage.TitleView>
+    
+    <ContentPage.Content>
+        <Grid x:Name="Grid_Principal" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" ColumnSpacing="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="30*" />
+                <ColumnDefinition Width="70*" />
+            </Grid.ColumnDefinitions>
+
+            <AbsoluteLayout Grid.Row="0" Grid.Column="0">
+
+                <StackLayout AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1" 
+                             VerticalOptions="Center" Orientation="Vertical" Spacing="20">
+
+                    <Entry x:Name="Email" Text="{Binding Email}" Placeholder="Login" WidthRequest="250"
+                           BackgroundColor="White" TextColor="Black" FontSize="Large" HeightRequest="50" Keyboard="Email"
+                           HorizontalOptions="CenterAndExpand"/>
+
+                    <Entry x:Name="Senha" Text="{Binding Senha}" Placeholder="Senha" WidthRequest="250"
+                           BackgroundColor="White" TextColor="Black" FontSize="Large" HeightRequest="50"
+                           HorizontalOptions="CenterAndExpand" IsPassword="True"/>
+
+                    <Button Text="Confirmar" Image="confirm.png" Command="{Binding SubmitCommand_Config}" HorizontalOptions="CenterAndExpand"
+                        FontAttributes="Bold" FontSize="Large" BorderRadius="20" BorderWidth="2" BorderColor="White"
+                        BackgroundColor="White" WidthRequest="250"/>
+
+                </StackLayout>
+            </AbsoluteLayout>
+        </Grid>   
+    </ContentPage.Content>
+</ContentPage>
